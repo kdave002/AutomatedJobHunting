@@ -3,12 +3,13 @@
     "first_name": "Kushal",
     "last_name": "Dave",
     "email": "k.dave1@gwu.edu",
-    "phone": "+1-000-000-0000",
+    "phone": "+1-703-928-0214",
     "location": {
-      "city": "Washington",
-      "state": "DC",
+      "address": "2111 Richmond Hwy",
+      "city": "Arlington",
+      "state": "VA",
       "country": "USA",
-      "zip": ""
+      "zip": "22202"
     },
     "links": {
       "linkedin": "https://linkedin.com/in/-kushal-dave",

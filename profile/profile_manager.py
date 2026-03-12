@@ -4,14 +4,15 @@ from pydantic import BaseModel, Field
 from typing import List, Optional, Dict
 
 class Location(BaseModel):
-    city: Optional[str] = ""
-    state: Optional[str] = ""
+    address: Optional[str] = "2111 Richmond Hwy"
+    city: Optional[str] = "Arlington"
+    state: Optional[str] = "VA"
     country: str = "USA"
-    zip: Optional[str] = ""
+    zip: Optional[str] = "22202"
 
 class Links(BaseModel):
-    linkedin: Optional[str] = ""
-    github: Optional[str] = ""
+    linkedin: Optional[str] = "https://www.linkedin.com/in/-kushal-dave/"
+    github: Optional[str] = "https://github.com/kushaldave002"
     portfolio: Optional[str] = ""
 
 class WorkAuth(BaseModel):
@@ -30,6 +31,7 @@ class Education(BaseModel):
     institution: str
     degree: str
     graduation_date: str
+    gpa: Optional[str] = ""
 
 class Skills(BaseModel):
     languages: List[str] = []

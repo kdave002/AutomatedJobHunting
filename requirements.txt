@@ -1,0 +1,13 @@
+# Core LLM
+anthropic>=0.84.0
+
+# Browser Automation
+playwright>=1.57.0
+stagehand>=3.6.0
+
+# Data Validation
+pydantic>=2.10.4
+
+# HTTP & Utilities
+requests>=2.32.3
+python-dotenv>=1.0.1

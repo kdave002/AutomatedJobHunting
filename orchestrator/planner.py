@@ -1,8 +1,8 @@
 import os
+import json
 import requests
-from typing import Dict, Optional
+from typing import Optional
 from pydantic import BaseModel
-from anthropic import Anthropic
 
 class JobDetails(BaseModel):
     title: str
@@ -14,51 +14,52 @@ class JobDetails(BaseModel):
     application_url: str
 
 class JobExtractor:
-    def __init__(self, api_key: str):
-        self.client = Anthropic(api_key=api_key)
+    def __init__(self, api_key: Optional[str] = None):
+        self.api_key = api_key or os.environ.get("GOOGLE_GENERATIVE_AI_API_KEY")
+        self.model = "gemini-2.5-flash"
 
-    def extract_from_url(self, url: str, html_content: str) -> JobDetails:
+    def extract_from_url(self, url: str, html_content: str) -> Optional[JobDetails]:
         """
-        Extract job details from raw HTML content using LLM.
+        Extract job details from raw HTML content using Gemini.
         """
         prompt = f"""
         Extract structured job information from the following HTML content of a job posting.
         URL: {url}
 
         HTML:
-        {html_content[:15000]} # Truncate to avoid context window issues
+        {html_content[:15000]}
 
-        Return a JSON object with:
+        Return ONLY a valid JSON object (no markdown, no explanation) with these fields:
         - title
         - company
         - location
         - salary
-        - required_skills (list)
+        - required_skills (list of strings)
         - description_summary
         - application_url
         """
 
-        response = self.client.messages.create(
-            model="claude-3-5-sonnet-20241022",
-            max_tokens=1000,
-            temperature=0,
-            system="You are an expert job market analyst. Extract job details into clean JSON format.",
-            messages=[{"role": "user", "content": prompt}]
-        )
-        
-        # In a real implementation, we would use tool-calling or a robust JSON parser here.
-        # This is the architectural pattern for Step 2.
-        import json
+        endpoint = f"https://generativelanguage.googleapis.com/v1beta/models/{self.model}:generateContent?key={self.api_key}"
+        payload = {
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {"temperature": 0}
+        }
+
         try:
-            # Simple extraction for demo purposes
-            json_text = response.content[0].text
-            if "```json" in json_text:
-                json_text = json_text.split("```json")[1].split("```")[0].strip()
-            return JobDetails(**json.loads(json_text))
+            response = requests.post(endpoint, json=payload, timeout=30)
+            response.raise_for_status()
+            text = response.json()["candidates"][0]["content"]["parts"][0]["text"]
+
+            # Strip markdown code fences if present
+            if "```json" in text:
+                text = text.split("```json")[1].split("```")[0].strip()
+            elif "```" in text:
+                text = text.split("```")[1].split("```")[0].strip()
+
+            return JobDetails(**json.loads(text))
         except Exception as e:
-            print(f"Error parsing JSON: {e}")
+            print(f"Error extracting job details: {e}")
             return None
 
 if __name__ == "__main__":
-    # This will be called by the orchestrator after Playwright fetches the HTML
-    print("Job Extractor ready.")
+    print("Job Extractor (Gemini) ready.")
