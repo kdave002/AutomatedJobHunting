@@ -20,21 +20,18 @@ class JobAgent:
     async def run(self, job_url: str):
         # Step 2: Extract
         print(f"--- [Step 2] Extracting job details from {job_url} ---")
-        # For the test, we can pass dummy HTML or just extract later
-        # For now, let's assume we know the company/title or extraction succeeds
-        # In the full loop, this would happen in-browser first
+        company = "Bio-Rad Laboratories"
+        job_title = "IT Intern (AI/ML)"
         
         # Step 3: Apply
         print(f"--- [Step 3] Starting Apply with Playwright + Stagehand ---")
-        # We'll use dummy company/title for the test run initialization
-        company = "GreenhouseTest"
-        job_title = "AI Engineer"
+        # Log entry for tracking
+        app_id = f"{company.lower().replace(' ', '_')}_{datetime.now().strftime('%Y%m%d%H%M%S')}"
+        self.logger.log_event(app_id, company, job_title, "init", "success", f"Live test run for {job_url}")
         
         await self.filler.apply(job_url, company, job_title)
         
-        # Step 4: Store Result
-        # (Handled by the internal logger in Step 3 for now)
-        print(f"--- [Step 4] Application results logged to data/logs/ ---")
+        print(f"--- [Step 4] Application results logged to data/logs/{app_id}.json ---")
 
 if __name__ == "__main__":
     agent = JobAgent()

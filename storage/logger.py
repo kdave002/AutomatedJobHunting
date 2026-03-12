@@ -1,6 +1,7 @@
 import json
 import os
 from datetime import datetime
+from typing import Optional
 
 class ApplicationLogger:
     def __init__(self, log_dir: str = "data/logs"):

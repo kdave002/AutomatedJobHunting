@@ -1,5 +1,6 @@
 import os
 import asyncio
+from datetime import datetime
 from stagehand import AsyncStagehand
 from playwright.async_api import async_playwright
 from profile.profile_manager import ProfileManager
@@ -22,7 +23,7 @@ class StagehandFormFiller:
 
         async with async_playwright() as p:
             # We use local chromium for now as requested for "free" testing
-            browser = await p.chromium.launch(headless=False) 
+            browser = await p.chromium.launch(headless=True)
             context = await browser.new_context()
             page = await context.new_page()
 
