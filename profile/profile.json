@@ -1,0 +1,60 @@
+{
+  "personal_info": {
+    "first_name": "Kushal",
+    "last_name": "Dave",
+    "email": "kushaldave02@gmail.com",
+    "phone": "+1-000-000-0000",
+    "location": {
+      "city": "",
+      "state": "",
+      "country": "USA",
+      "zip": ""
+    },
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/kushal-dave/",
+      "github": "https://github.com/kdave002",
+      "portfolio": ""
+    },
+    "work_authorization": {
+      "authorized_to_work_in_us": true,
+      "requires_sponsorship": false
+    }
+  },
+  "professional_summary": "Experienced software engineer and researcher focused on AI, machine learning, and automation.",
+  "experience": [
+    {
+      "company": "Startup",
+      "role": "Lead Researcher / Builder",
+      "location": "Remote",
+      "start_date": "2025-12",
+      "end_date": "Present",
+      "description": [
+        "Developing TSRecourse and AutomatedJobHunting projects.",
+        "Building autonomous agents for job application automation using Playwright and LLMs."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University Name",
+      "degree": "B.S. Computer Science",
+      "graduation_date": "2024-05"
+    }
+  ],
+  "skills": {
+    "languages": ["Python", "JavaScript", "TypeScript", "SQL"],
+    "frameworks": ["FastAPI", "Playwright", "React", "Node.js"],
+    "tools": ["Git", "PostgreSQL", "Docker", "Claude API", "OpenClaw"],
+    "domains": ["AI/ML", "Automation", "FinTech", "DevOps"]
+  },
+  "preferences": {
+    "job_titles": ["Software Engineer", "Machine Learning Engineer", "AI Engineer", "Backend Developer"],
+    "locations": ["Remote", "Hybrid", "San Francisco", "New York"],
+    "salary_min": 100000,
+    "remote_only": true
+  },
+  "resume_paths": {
+    "base": "resumes/base_resume.pdf",
+    "tailored_dir": "resumes/tailored/"
+  }
+}
