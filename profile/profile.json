@@ -2,17 +2,17 @@
   "personal_info": {
     "first_name": "Kushal",
     "last_name": "Dave",
-    "email": "kushaldave02@gmail.com",
+    "email": "k.dave1@gwu.edu",
     "phone": "+1-000-000-0000",
     "location": {
-      "city": "",
-      "state": "",
+      "city": "Washington",
+      "state": "DC",
       "country": "USA",
       "zip": ""
     },
     "links": {
-      "linkedin": "https://www.linkedin.com/in/kushal-dave/",
-      "github": "https://github.com/kdave002",
+      "linkedin": "https://linkedin.com/in/-kushal-dave",
+      "github": "https://github.com/kushaldave002",
       "portfolio": ""
     },
     "work_authorization": {
@@ -20,41 +20,74 @@
       "requires_sponsorship": false
     }
   },
-  "professional_summary": "Experienced software engineer and researcher focused on AI, machine learning, and automation.",
+  "professional_summary": "AI/ML Engineer and Researcher with expertise in Generative AI (RAG, Agentic AI), Computer Vision, and scalable document processing. Experienced in architecting legal research platforms and real-time ergonomic assessment systems.",
   "experience": [
     {
-      "company": "Startup",
-      "role": "Lead Researcher / Builder",
-      "location": "Remote",
-      "start_date": "2025-12",
+      "company": "ReferU.AI",
+      "role": "AI/ML Engineer Intern",
+      "location": "Arlington, Virginia",
+      "start_date": "2025-09",
       "end_date": "Present",
       "description": [
-        "Developing TSRecourse and AutomatedJobHunting projects.",
-        "Building autonomous agents for job application automation using Playwright and LLMs."
+        "Architected a Generative AI legal research platform using LangChain and PostgreSQL to execute RAG pipelines.",
+        "Developed autonomous Agentic AI systems via OpenAI Agent Builder to automate client-lawyer matchmaking.",
+        "Engineered scalable document processing and agent orchestration workflows using N8N, Claude Code, and GitHub Copilot.",
+        "Containerized AI features using Docker and managed model deployment via Git and Jenkins."
+      ]
+    },
+    {
+      "company": "ReferU.AI",
+      "role": "Technical Product & AI Solutions Intern",
+      "location": "Arlington, VA",
+      "start_date": "2024-01",
+      "end_date": "2024-04",
+      "description": [
+        "Led the lifecycle for a multi-agent GenAI system, defining technical roadmaps for Python and LangChain backend integrations.",
+        "Managed Salesforce data alignment strategies to streamline lead management between AI agents and CRM platforms.",
+        "Directed cross-functional technical pods in Agile/Jira environments to launch 4 features for an Agentic AI marketplace."
+      ]
+    },
+    {
+      "company": "GTU IDEALAB",
+      "role": "Computer Vision Research Engineer Intern",
+      "location": "Ahmedabad, India",
+      "start_date": "2023-09",
+      "end_date": "2023-10",
+      "description": [
+        "Co-designed a real-time Computer Vision ergonomic assessment system using MoveNet Lightning, TensorFlow, and OpenCV.",
+        "Optimized Pose Estimation pipelines using OpenCV pre-processing, increasing model accuracy by 15%.",
+        "Secured ₹90,000 SSIP funding and presented research at IEA 2024."
       ]
     }
   ],
   "education": [
     {
-      "institution": "University Name",
-      "degree": "B.S. Computer Science",
-      "graduation_date": "2024-05"
+      "institution": "The George Washington University",
+      "degree": "Master of Science in Computer Science",
+      "graduation_date": "2026-05",
+      "gpa": "3.50/4.00"
+    },
+    {
+      "institution": "Gujarat Technological University",
+      "degree": "Bachelors in Computer Science (AI & ML)",
+      "graduation_date": "2024-06",
+      "gpa": "4.00/4.00"
     }
   ],
   "skills": {
-    "languages": ["Python", "JavaScript", "TypeScript", "SQL"],
-    "frameworks": ["FastAPI", "Playwright", "React", "Node.js"],
-    "tools": ["Git", "PostgreSQL", "Docker", "Claude API", "OpenClaw"],
-    "domains": ["AI/ML", "Automation", "FinTech", "DevOps"]
+    "languages": ["Python", "Java", "C", "SQL", "Django", "Flask"],
+    "frameworks": ["LangChain", "TensorFlow", "PyTorch", "Keras", "FastAPI"],
+    "tools": ["OpenAI Agent Builder", "N8N", "Docker", "Kubernetes", "Jenkins", "Git", "Jira", "Salesforce"],
+    "domains": ["Generative AI", "Computer Vision", "RAG", "Agentic AI", "NLP", "Cloud Computing (AWS/GCP)"]
   },
   "preferences": {
-    "job_titles": ["Software Engineer", "Machine Learning Engineer", "AI Engineer", "Backend Developer"],
-    "locations": ["Remote", "Hybrid", "San Francisco", "New York"],
+    "job_titles": ["AI Engineer", "ML Engineer", "Machine Learning Intern", "Generative AI Developer", "Backend Engineer"],
+    "locations": ["Washington DC", "Arlington VA", "Remote", "New York", "San Francisco"],
     "salary_min": 100000,
-    "remote_only": true
+    "remote_only": false
   },
   "resume_paths": {
-    "base": "resumes/base_resume.pdf",
+    "base": "resumes/base/Kushal_Dave_Resume.pdf",
     "tailored_dir": "resumes/tailored/"
   }
 }
